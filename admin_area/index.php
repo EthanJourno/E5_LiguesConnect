@@ -56,7 +56,7 @@
                 </div>
                 <!-- button*10>a.nav-link.text-light.bg-info.my-1 -->
                 <div class="button text-center">
-                <button class="my-3"><a href="" class="nav-link text-light bg-info my-1">Insert Products</a>
+                <button class="my-3"><a href="insert_produit.php" class="nav-link text-light bg-info my-1">Insert Products</a>
             </button>
                 <button><a href="" class="nav-link text-light bg-info my-1">View Products</a>
             </button>
@@ -81,7 +81,7 @@
             </div>
         </div>
         <!-- fourth child -->
-        <div class="container my-5">
+        <div class="container my-3">
             <?php 
                 if(isset($_GET['insert_sport'])){
                     include('insert_sport.php');
