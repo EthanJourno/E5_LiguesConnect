@@ -4,6 +4,7 @@
   include('includes/connect.php');
   include('./functions/common_function.php');
 
+
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -40,38 +41,35 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="catalogue.php">Produits</a>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" href="./users_area/user_registration.php">Inscription</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="panier.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Prix total : <?php prix_total_panier(); ?>/-</a>
+            <a class="nav-link" href="panier.php">Prix total : <?php prix_total_panier(); ?>/-</a>
           </li>
 
         </ul>
-        <form class="d-flex" role="search" action ="search_product.php" method="get"> 
+        <form class="d-flex" role="search" action ="    " method="get">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
           <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
         </form>
       </div>
     </div>
   </nav>
-  <!-- calling panier fonction -->
-   <?php
+    <!-- calling panier fonction -->
+    <?php
     panier();
    ?>
+
   <!-- second child -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <ul class="navbar-nav me-auto">
-          <?php
+      <?php
             if(isset($_SESSION['username'])){
                 echo "
                 <li class='nav-item'>
@@ -96,7 +94,6 @@
                 </li>";           
             }
             ?>
-
       </ul>
   </nav>
   <!-- third child -->
@@ -115,13 +112,9 @@
           <div class="row">
             <!-- fetching produits -->
             <?php   
-            getproducts();
+            search_product();
             get_unique_sports();
             get_unique_demographies();
-            //calling ip function
-            // $ip = getIPAddress();  
-            // echo 'User Real IP Address - '.$ip;  
-
 
             ?>
 
@@ -132,7 +125,7 @@
           <!-- types de sport -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
-              <a href="#" class="nav-link text-light"><h5>Type de sport</h5></a>
+              <a href="#" class="nav-link text-light"><h4>Type de sport</h4></a>
           </li>
           <?php
           getsport();
@@ -141,7 +134,7 @@
         <!-- demographies de sport -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
-              <a href="#" class="nav-link text-light"><h5>Démographies</h5></a>
+              <a href="#" class="nav-link text-light"><h4>Categories de sport</h4></a>
           </li>
           <?php
           
@@ -156,11 +149,11 @@
 
 
   <!-- last child -->
-<!-- include footer -->
- <?php
+   <!-- include footer -->
+   <?php
   include('./includes/footer.php');
- ?>
-      </div>
+ ?>     
+       </div>
 
 
   <!-- bootstrap js link -->

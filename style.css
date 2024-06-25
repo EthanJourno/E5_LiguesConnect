@@ -18,3 +18,10 @@
     object-fit: contain;
 
 } */
+ .panier_image{
+
+    width: 100px; 
+    height: auto;
+    object-fit: contain;
+
+ }

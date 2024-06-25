@@ -4,6 +4,7 @@
   include('includes/connect.php');
   include('./functions/common_function.php');
 
+
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -64,14 +65,15 @@
       </div>
     </div>
   </nav>
-  <!-- calling panier fonction -->
-   <?php
+    <!-- calling panier fonction -->
+    <?php
     panier();
    ?>
+
   <!-- second child -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <ul class="navbar-nav me-auto">
-          <?php
+      <?php
             if(isset($_SESSION['username'])){
                 echo "
                 <li class='nav-item'>
@@ -115,13 +117,9 @@
           <div class="row">
             <!-- fetching produits -->
             <?php   
-            getproducts();
+            get_all_produits();
             get_unique_sports();
             get_unique_demographies();
-            //calling ip function
-            // $ip = getIPAddress();  
-            // echo 'User Real IP Address - '.$ip;  
-
 
             ?>
 
@@ -132,7 +130,7 @@
           <!-- types de sport -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
-              <a href="#" class="nav-link text-light"><h5>Type de sport</h5></a>
+              <a href="#" class="nav-link text-light"><h4>Type de sport</h4></a>
           </li>
           <?php
           getsport();
@@ -141,7 +139,7 @@
         <!-- demographies de sport -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
-              <a href="#" class="nav-link text-light"><h5>Démographies</h5></a>
+              <a href="#" class="nav-link text-light"><h4>Categories de sport</h4></a>
           </li>
           <?php
           
@@ -156,11 +154,11 @@
 
 
   <!-- last child -->
-<!-- include footer -->
- <?php
+   <!-- include footer -->
+  <?php
   include('./includes/footer.php');
- ?>
-      </div>
+ ?>     
+  </div>
 
 
   <!-- bootstrap js link -->

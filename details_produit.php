@@ -4,6 +4,7 @@
   include('includes/connect.php');
   include('./functions/common_function.php');
 
+
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -50,10 +51,10 @@
             <a class="nav-link" href="#">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="panier.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Prix total : <?php prix_total_panier(); ?>/-</a>
+            <a class="nav-link" href="panier.php">Prix total : <?php prix_total_panier(); ?>/-</a>
           </li>
 
         </ul>
@@ -65,13 +66,15 @@
     </div>
   </nav>
   <!-- calling panier fonction -->
-   <?php
+  <?php
     panier();
    ?>
+
+
   <!-- second child -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <ul class="navbar-nav me-auto">
-          <?php
+      <?php
             if(isset($_SESSION['username'])){
                 echo "
                 <li class='nav-item'>
@@ -114,14 +117,10 @@
           <!-- produits -->
           <div class="row">
             <!-- fetching produits -->
-            <?php   
-            getproducts();
+            <?php
+            voir_plus();   
             get_unique_sports();
             get_unique_demographies();
-            //calling ip function
-            // $ip = getIPAddress();  
-            // echo 'User Real IP Address - '.$ip;  
-
 
             ?>
 
@@ -132,7 +131,7 @@
           <!-- types de sport -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
-              <a href="#" class="nav-link text-light"><h5>Type de sport</h5></a>
+              <a href="#" class="nav-link text-light"><h4>Type de sport</h4></a>
           </li>
           <?php
           getsport();
@@ -141,7 +140,7 @@
         <!-- demographies de sport -->
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item bg-info">
-              <a href="#" class="nav-link text-light"><h5>Démographies</h5></a>
+              <a href="#" class="nav-link text-light"><h4>Categories de sport</h4></a>
           </li>
           <?php
           
