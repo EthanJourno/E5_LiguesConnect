@@ -373,4 +373,34 @@ function prix_total_panier(){
     echo $prix_total;
 }
 
+// get utilisateur commandes details
+function get_user_order_details(){
+    global $con;
+    $username=$_SESSION['username'];
+    $get_details="Select * from `utilisateurs` where nom_utilisateur='$username'";
+    $result_query=mysqli_query($con,$get_details);
+    while($row_query=mysqli_fetch_array($result_query)){
+        $id_utilisateur=$row_query['id_utilisateur'];
+        if(!isset($_GET['edit_account'])){
+            if(!isset($_GET['vos_commandes'])){
+                if(!isset($_GET['supprimer_compte'])){
+                $get_orders="Select * from `commandes` where id_utilisateur=$id_utilisateur 
+                and status_commande='pending'";
+                $result_commandes_query=mysqli_query($con,$get_orders);
+                $row_count=mysqli_num_rows($result_commandes_query);
+                if($row_count>0){
+                    echo "<h3 class='text-center text-success'>Tu as <span class='text-danger'>$row_count</span> commandes en attente</h3>
+                    <p class='text-center'><a href='profile.php?vos_commandes' class='text-dark'>Details de vos commandes</a></p>";
+                } else{
+                    echo "<h3 class='text-center text-success'>Tu n'as pas de commandes</h3>
+                    <p class='text-center'><a href='../index.php' class='text-dark'>Explorer nos sports</a></p>";
+
+                }
+                }
+        }
+    }
+
+}
+}
+
 ?>

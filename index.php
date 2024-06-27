@@ -37,15 +37,25 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="catalogue.php">Produits</a>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./users_area/user_registration.php">Inscription</a>
-          </li>
+          <?php
+          if(isset($_SESSION['username'])){
+            echo "
+            <li class='nav-item'>
+                <a  class='nav-link' href='./users_area/profile.php'>Mon compte </a>
+            </li>";
+        } else {
+            echo "
+            <li class='nav-item'>
+                <a class='nav-link' href='./users_area/user_registration.php'>Inscription</a>
+            </li>";  
+        }
+          
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>

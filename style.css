@@ -25,3 +25,16 @@
     object-fit: contain;
 
  }
+ .avatar{
+    width: 90%;
+    margin: auto;
+    display: block;
+    height: 100%;
+    object-fit: contain;
+ }
+ .edit_avatar{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+ }
